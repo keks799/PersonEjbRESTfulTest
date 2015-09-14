@@ -7,7 +7,7 @@ import javax.ejb.Remote;
  */
 
 @Remote
-public interface SessionBeanRemote {
+public interface MyEJavaBRemote {
 
     public String firstMethod();
 }

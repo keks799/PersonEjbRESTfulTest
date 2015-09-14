@@ -1,6 +1,6 @@
 package controllers;
 
-import ru.ejb.SessionBeanRemote;
+import ru.ejb.MyEJavaBRemote;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -16,7 +16,8 @@ import java.io.PrintWriter;
  * Created by Business_Book on 11.09.2015.
  */
 
-@WebServlet(name = "greet", urlPatterns = "/")
+//@WebServlet(name = "greet", urlPatterns = "/")
+@WebServlet("/TestServlet")
 public class MyServlet extends HttpServlet {
     public MyServlet() {
         super();
@@ -47,10 +48,12 @@ public class MyServlet extends HttpServlet {
         try {
 //            InitialContext ctx = new InitialContext(p);
             InitialContext ctx = new InitialContext();
-//            Object obj = ctx.lookup("SessionBeanRemote/Remote#ru.ejb.SessionBeanRemote");
-            Object obj = ctx.lookup(getEARName() + "/SessionBean/remote");
+//            Object obj = ctx.lookup("MyEJavaBRemote/Remote#ru.ejb.MyEJavaBRemote");
+//            Object obj = ctx.lookup(getEARName() + "SessionEJB/Remote");
+//            Object obj = ctx.lookup("MyEJavaBEJB/Remote#ru.ejb.MyEJavaBRemote");
+            Object obj = ctx.lookup("global/untitled_ear_exploded/web/MyEJavaB!ru.ejb.MyEJavaBRemote");
             out.print(obj); /* * Export it as a war file and deploye it on the same server. */
-            SessionBeanRemote remote = (SessionBeanRemote) obj;
+            MyEJavaBRemote remote = (MyEJavaBRemote) obj;
             String result = remote.firstMethod();
             out.print(result);
         } catch (NamingException e) {

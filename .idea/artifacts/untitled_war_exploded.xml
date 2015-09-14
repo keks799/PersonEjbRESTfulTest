@@ -8,6 +8,7 @@
           <element id="module-output" name="untitled" />
         </element>
       </element>
+      <element id="artifact" artifact-name="untitled:ejb exploded" />
     </root>
   </artifact>
 </component>

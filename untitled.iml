@@ -41,5 +41,7 @@
     <orderEntry type="library" scope="PROVIDED" name="JBoss 7.1.1.Final" level="application_server_libraries" />
     <orderEntry type="library" name="ejb-3.2" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" name="jboss-modules" level="project" />
+    <orderEntry type="library" name="jboss-as-7.1.1" level="project" />
   </component>
 </module>

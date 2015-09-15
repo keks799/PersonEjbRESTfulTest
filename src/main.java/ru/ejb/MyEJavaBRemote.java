@@ -10,4 +10,5 @@ import javax.ejb.Remote;
 public interface MyEJavaBRemote {
 
     public String firstMethod();
+
 }

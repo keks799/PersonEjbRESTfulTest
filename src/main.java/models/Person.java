@@ -1,5 +1,6 @@
 package models;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
@@ -7,7 +8,9 @@ import java.sql.Date;
  */
 
 
-public class Person {
+public class Person implements Serializable {
+
+    private Long id;
 
     private String firstname;
 
@@ -47,5 +50,13 @@ public class Person {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

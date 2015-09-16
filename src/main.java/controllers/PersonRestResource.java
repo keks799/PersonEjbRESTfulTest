@@ -12,8 +12,8 @@ import javax.ws.rs.core.*;
 /**
  * Created by Business_Book on 11.09.2015.
  */
-//@Stateless(name = "SessionEJB")
-    @Stateful
+
+@Stateful
 @Path("/person")
 public class PersonRestResource {
     @EJB

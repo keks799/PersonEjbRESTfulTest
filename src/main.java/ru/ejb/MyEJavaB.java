@@ -5,8 +5,8 @@ import javax.ejb.Stateful;
 /**
  * Created by Business_Book on 11.09.2015.
  */
-//@Stateless (mappedName = "MyEJavaBEJB/Remote")
-    @Stateful
+
+@Stateful
 public class MyEJavaB implements MyEJavaBRemote {
     public MyEJavaB() {
     }

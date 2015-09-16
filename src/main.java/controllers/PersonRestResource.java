@@ -1,6 +1,6 @@
 package controllers;
 
-import ru.ejb.MyEJavaBRemote;
+import ru.ejb.MyEJavaB;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
@@ -17,7 +17,7 @@ import javax.ws.rs.core.*;
 @Path("/person")
 public class PersonRestResource {
     @EJB
-    private MyEJavaBRemote myEJavaB;
+    private MyEJavaB myEJavaB;
 
     @Context
     private HttpHeaders headers;

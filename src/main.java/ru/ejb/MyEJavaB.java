@@ -7,11 +7,10 @@ import javax.ejb.Stateful;
  */
 
 @Stateful
-public class MyEJavaB implements MyEJavaBRemote {
+public class MyEJavaB  {
     public MyEJavaB() {
     }
 
-    @Override
     public String firstMethod() {
         return "My First Method";
     }

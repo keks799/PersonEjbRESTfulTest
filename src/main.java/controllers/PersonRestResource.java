@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Person;
 import ru.ejb.MyEJavaBRemote;
 
 import javax.ejb.EJB;
@@ -7,7 +8,11 @@ import javax.ejb.Stateful;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Business_Book on 11.09.2015.
@@ -31,22 +36,18 @@ public class PersonRestResource {
     }
 
     @GET
-    @Produces( {MediaType.TEXT_PLAIN} )
-    public Response root( @Context UriInfo uriInfo ) {
-
-        System.out.println( "URI INFO = " + uriInfo.getRequestUri() );
-        String uri = uriInfo.getRequestUri().toString();
-        uri = ( uri.matches( ".*/$" ) ? uri.substring( 0, uri.length() - 1 ) : uri );
-
-        return Response.status( Response.Status.SEE_OTHER ).header( HttpHeaders.LOCATION, uri + "/status" )
-                .build();
-    }
-
-    @GET
-    @Path("/all")
-    @Produces("text/plain")
-    public String getPersons(){
-        System.out.println("gotit!!");
-        return myEJavaB.firstMethod();
+    @Path( "/all" )
+    @Produces( MediaType.APPLICATION_JSON )
+    public List<Person> listPersons() {
+        /// test
+        Person person = new Person();
+        person.setId(new Long(0));
+        person.setBirthday(new Date());
+        person.setFirstname("ddd");
+        person.setLastname("ssss");
+        person.setMiddlename("rrrr");
+        myEJavaB.listOfPersons().add(person);
+        // test
+        return myEJavaB.listOfPersons();
     }
 }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9efc89a9-6a4e-48dc-81dd-4900aef5738c" name="Default" comment="metods for">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java" afterPath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaBRemote.java" afterPath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaBRemote.java" />
+    <list default="true" id="9efc89a9-6a4e-48dc-81dd-4900aef5738c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java/models/Person.java" afterPath="$PROJECT_DIR$/src/main.java/models/Person.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java" afterPath="$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -38,35 +37,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonRestResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1216" column="38" selection-start-line="1216" selection-start-column="38" selection-end-line="1216" selection-end-column="38" />
+              <caret line="1218" column="38" selection-start-line="1218" selection-start-column="38" selection-end-line="1218" selection-end-column="38" />
               <folding>
-                <marker date="1442431517578" expanded="true" signature="63471:63488" placeholder="..." />
-                <marker date="1442431517578" expanded="true" signature="63471:63506" placeholder="..." />
-                <marker date="1442431517578" expanded="true" signature="63471:63519" placeholder="..." />
-                <marker date="1442431517578" expanded="true" signature="63471:63534" placeholder="..." />
+                <marker date="1442433044793" expanded="true" signature="63202:63219" placeholder="..." />
+                <marker date="1442433044793" expanded="true" signature="63202:63237" placeholder="..." />
+                <marker date="1442433044793" expanded="true" signature="63202:63250" placeholder="..." />
+                <marker date="1442433044793" expanded="true" signature="63202:63265" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyEJavaB.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyEJavaB.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8675325">
+            <state vertical-scroll-proportion="0.0">
               <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -79,27 +68,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.java/models/Person.java">
+      <file leaf-file-name="PersonRestResource.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.5584416">
+              <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#966#967#0" expanded="true" />
-                <element signature="e#991#992#0" expanded="true" />
-                <element signature="e#1025#1026#0" expanded="true" />
-                <element signature="e#1053#1054#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyEJavaBRemote.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaBRemote.java">
+      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.java/models/Person.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,10 +118,10 @@
         <option value="$PROJECT_DIR$/src/main.java/controllers/MyServlet.java" />
         <option value="$PROJECT_DIR$/src/main.java/controllers/RemoteManager.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java" />
-        <option value="$PROJECT_DIR$/src/main.java/models/Person.java" />
         <option value="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaBRemote.java" />
         <option value="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java" />
+        <option value="$PROJECT_DIR$/src/main.java/models/Person.java" />
+        <option value="$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java" />
       </list>
     </option>
   </component>
@@ -692,7 +677,7 @@
       <method />
     </configuration>
     <configuration default="false" name="JBoss 7.1.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 7.1.1.Final" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/untitledWeb" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/untitledWeb/app/person/" />
       <deployment>
         <artifact name="untitled:ear exploded">
           <settings />
@@ -790,7 +775,7 @@
       <workItem from="1442250101446" duration="308000" />
       <workItem from="1442250455115" duration="581000" />
       <workItem from="1442251174033" duration="12382000" />
-      <workItem from="1442429919458" duration="1729000" />
+      <workItem from="1442429919458" duration="3199000" />
     </task>
     <task id="LOCAL-00001" summary="worked configuration">
       <created>1442250754338</created>
@@ -810,15 +795,21 @@
       <option name="project" value="LOCAL" />
       <updated>1442345516373</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CRUD methods for Person">
+      <created>1442431673733</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1442431673733</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15000000" />
+    <option name="totallyTimeSpent" value="16470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -828,11 +819,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967373" sideWeight="0.50907713" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32626426" sideWeight="0.49092284" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32626426" sideWeight="0.49092284" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="EJB" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -895,19 +886,26 @@
     <MESSAGE value="worked configuration" />
     <MESSAGE value="ejb worked" />
     <MESSAGE value="ejb worked without Servlet. Path /person/all. Root is not work (/person/)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ejb worked without Servlet. Path /person/all. Root is not work (/person/)" />
+    <MESSAGE value="CRUD methods for Person" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD methods for Person" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java</url>
-          <line>36</line>
+          <line>50</line>
           <properties />
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -928,7 +926,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -937,10 +937,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1115" column="38" selection-start-line="1115" selection-start-column="38" selection-end-line="1115" selection-end-column="38" />
           <folding>
-            <marker date="1442431517578" expanded="true" signature="63471:63488" placeholder="..." />
-            <marker date="1442431517578" expanded="true" signature="63471:63506" placeholder="..." />
-            <marker date="1442431517578" expanded="true" signature="63471:63519" placeholder="..." />
-            <marker date="1442431517578" expanded="true" signature="63471:63534" placeholder="..." />
+            <marker date="1442433044793" expanded="true" signature="63202:63219" placeholder="..." />
+            <marker date="1442433044793" expanded="true" signature="63202:63237" placeholder="..." />
+            <marker date="1442433044793" expanded="true" signature="63202:63250" placeholder="..." />
+            <marker date="1442433044793" expanded="true" signature="63202:63265" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -981,7 +981,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1067,12 +1069,12 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1216" column="38" selection-start-line="1216" selection-start-column="38" selection-end-line="1216" selection-end-column="38" />
+          <caret line="1218" column="38" selection-start-line="1218" selection-start-column="38" selection-end-line="1218" selection-end-column="38" />
           <folding>
-            <marker date="1442431517578" expanded="true" signature="63471:63488" placeholder="..." />
-            <marker date="1442431517578" expanded="true" signature="63471:63506" placeholder="..." />
-            <marker date="1442431517578" expanded="true" signature="63471:63519" placeholder="..." />
-            <marker date="1442431517578" expanded="true" signature="63471:63534" placeholder="..." />
+            <marker date="1442433044793" expanded="true" signature="63202:63219" placeholder="..." />
+            <marker date="1442433044793" expanded="true" signature="63202:63237" placeholder="..." />
+            <marker date="1442433044793" expanded="true" signature="63202:63250" placeholder="..." />
+            <marker date="1442433044793" expanded="true" signature="63202:63265" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1082,28 +1084,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java/models/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1117,9 +1097,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/sql/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33235294">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8675325">
+        <state vertical-scroll-proportion="0.0">
           <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1127,6 +1115,26 @@
             <element signature="e#325#326#0" expanded="true" />
             <element signature="e#382#383#0" expanded="true" />
             <element signature="e#412#413#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java/models/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5584416">
+          <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

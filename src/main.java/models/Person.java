@@ -1,7 +1,7 @@
 package models;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by Business_Book on 11.09.2015.
@@ -9,6 +9,8 @@ import java.sql.Date;
 
 
 public class Person implements Serializable {
+    public Person() {
+    }
 
     private Long id;
 

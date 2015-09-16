@@ -51,10 +51,10 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="1129" column="38" selection-start-line="1129" selection-start-column="38" selection-end-line="1129" selection-end-column="38" />
               <folding>
-                <marker date="1442429701970" expanded="true" signature="58366:58658" placeholder="..." />
-                <marker date="1442429701970" expanded="true" signature="58366:58673" placeholder="..." />
-                <marker date="1442429701970" expanded="true" signature="58366:60834" placeholder="..." />
-                <marker date="1442429701970" expanded="true" signature="58366:60849" placeholder="..." />
+                <marker date="1442429745725" expanded="true" signature="58366:58658" placeholder="..." />
+                <marker date="1442429745725" expanded="true" signature="58366:58673" placeholder="..." />
+                <marker date="1442429745725" expanded="true" signature="58366:60834" placeholder="..." />
+                <marker date="1442429745725" expanded="true" signature="58366:60849" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -63,9 +63,10 @@
       <file leaf-file-name="MyEJavaB.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6165803">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7487047">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
+                <element signature="e#195#196#0" expanded="true" />
                 <element signature="e#235#236#0" expanded="true" />
               </folding>
             </state>
@@ -307,6 +308,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -748,7 +763,7 @@
       <workItem from="1442250101446" duration="308000" />
       <workItem from="1442250455115" duration="581000" />
       <workItem from="1442251174033" duration="12382000" />
-      <workItem from="1442424406013" duration="1939000" />
+      <workItem from="1442424406013" duration="2018000" />
     </task>
     <task id="LOCAL-00001" summary="worked configuration">
       <created>1442250754338</created>
@@ -774,11 +789,17 @@
       <option name="project" value="LOCAL" />
       <updated>1442429581862</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ejb without remote">
+      <created>1442429749537</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1442429749537</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15210000" />
+    <option name="totallyTimeSpent" value="15289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -920,10 +941,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1115" column="38" selection-start-line="1115" selection-start-column="38" selection-end-line="1115" selection-end-column="38" />
           <folding>
-            <marker date="1442429701970" expanded="true" signature="58366:58658" placeholder="..." />
-            <marker date="1442429701970" expanded="true" signature="58366:58673" placeholder="..." />
-            <marker date="1442429701970" expanded="true" signature="58366:60834" placeholder="..." />
-            <marker date="1442429701970" expanded="true" signature="58366:60849" placeholder="..." />
+            <marker date="1442429745725" expanded="true" signature="58366:58658" placeholder="..." />
+            <marker date="1442429745725" expanded="true" signature="58366:58673" placeholder="..." />
+            <marker date="1442429745725" expanded="true" signature="58366:60834" placeholder="..." />
+            <marker date="1442429745725" expanded="true" signature="58366:60849" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -933,6 +954,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#195#196#0" expanded="true" />
             <element signature="e#235#236#0" expanded="true" />
           </folding>
         </state>
@@ -959,6 +981,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
+            <element signature="e#195#196#0" expanded="true" />
             <element signature="e#235#236#0" expanded="true" />
           </folding>
         </state>
@@ -985,6 +1008,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
+            <element signature="e#195#196#0" expanded="true" />
             <element signature="e#235#236#0" expanded="true" />
           </folding>
         </state>
@@ -1010,10 +1034,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1129" column="38" selection-start-line="1129" selection-start-column="38" selection-end-line="1129" selection-end-column="38" />
           <folding>
-            <marker date="1442429701970" expanded="true" signature="58366:58658" placeholder="..." />
-            <marker date="1442429701970" expanded="true" signature="58366:58673" placeholder="..." />
-            <marker date="1442429701970" expanded="true" signature="58366:60834" placeholder="..." />
-            <marker date="1442429701970" expanded="true" signature="58366:60849" placeholder="..." />
+            <marker date="1442429745725" expanded="true" signature="58366:58658" placeholder="..." />
+            <marker date="1442429745725" expanded="true" signature="58366:58673" placeholder="..." />
+            <marker date="1442429745725" expanded="true" signature="58366:60834" placeholder="..." />
+            <marker date="1442429745725" expanded="true" signature="58366:60849" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1036,9 +1060,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6165803">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7487047">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
+            <element signature="e#195#196#0" expanded="true" />
             <element signature="e#235#236#0" expanded="true" />
           </folding>
         </state>

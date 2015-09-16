@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9efc89a9-6a4e-48dc-81dd-4900aef5738c" name="Default" comment="ejb worked without Servlet. Path /person/all. Root is not work (/person/)">
-      <change type="DELETED" beforePath="C:\code\IdeaProjects\untitled\src\main.java\ru\ejb\MyEJavaBRemote.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java" afterPath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java" afterPath="$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java" />
+    <list default="true" id="9efc89a9-6a4e-48dc-81dd-4900aef5738c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -52,12 +49,12 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1130" column="38" selection-start-line="1130" selection-start-column="38" selection-end-line="1130" selection-end-column="38" />
+              <caret line="1129" column="38" selection-start-line="1129" selection-start-column="38" selection-end-line="1129" selection-end-column="38" />
               <folding>
-                <marker date="1442429539360" expanded="true" signature="59012:59304" placeholder="..." />
-                <marker date="1442429539360" expanded="true" signature="59012:59319" placeholder="..." />
-                <marker date="1442429539360" expanded="true" signature="59012:61480" placeholder="..." />
-                <marker date="1442429539360" expanded="true" signature="59012:61495" placeholder="..." />
+                <marker date="1442429701970" expanded="true" signature="58366:58658" placeholder="..." />
+                <marker date="1442429701970" expanded="true" signature="58366:58673" placeholder="..." />
+                <marker date="1442429701970" expanded="true" signature="58366:60834" placeholder="..." />
+                <marker date="1442429701970" expanded="true" signature="58366:60849" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -751,7 +748,7 @@
       <workItem from="1442250101446" duration="308000" />
       <workItem from="1442250455115" duration="581000" />
       <workItem from="1442251174033" duration="12382000" />
-      <workItem from="1442424406013" duration="1758000" />
+      <workItem from="1442424406013" duration="1939000" />
     </task>
     <task id="LOCAL-00001" summary="worked configuration">
       <created>1442250754338</created>
@@ -771,11 +768,17 @@
       <option name="project" value="LOCAL" />
       <updated>1442345516373</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ejb without remote">
+      <created>1442429581862</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1442429581862</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15029000" />
+    <option name="totallyTimeSpent" value="15210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -856,7 +859,8 @@
     <MESSAGE value="worked configuration" />
     <MESSAGE value="ejb worked" />
     <MESSAGE value="ejb worked without Servlet. Path /person/all. Root is not work (/person/)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ejb worked without Servlet. Path /person/all. Root is not work (/person/)" />
+    <MESSAGE value="ejb without remote" />
+    <option name="LAST_COMMIT_MESSAGE" value="ejb without remote" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -916,10 +920,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="1115" column="38" selection-start-line="1115" selection-start-column="38" selection-end-line="1115" selection-end-column="38" />
           <folding>
-            <marker date="1442429539360" expanded="true" signature="59012:59304" placeholder="..." />
-            <marker date="1442429539360" expanded="true" signature="59012:59319" placeholder="..." />
-            <marker date="1442429539360" expanded="true" signature="59012:61480" placeholder="..." />
-            <marker date="1442429539360" expanded="true" signature="59012:61495" placeholder="..." />
+            <marker date="1442429701970" expanded="true" signature="58366:58658" placeholder="..." />
+            <marker date="1442429701970" expanded="true" signature="58366:58673" placeholder="..." />
+            <marker date="1442429701970" expanded="true" signature="58366:60834" placeholder="..." />
+            <marker date="1442429701970" expanded="true" signature="58366:60849" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1004,12 +1008,12 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1130" column="38" selection-start-line="1130" selection-start-column="38" selection-end-line="1130" selection-end-column="38" />
+          <caret line="1129" column="38" selection-start-line="1129" selection-start-column="38" selection-end-line="1129" selection-end-column="38" />
           <folding>
-            <marker date="1442429539360" expanded="true" signature="59012:59304" placeholder="..." />
-            <marker date="1442429539360" expanded="true" signature="59012:59319" placeholder="..." />
-            <marker date="1442429539360" expanded="true" signature="59012:61480" placeholder="..." />
-            <marker date="1442429539360" expanded="true" signature="59012:61495" placeholder="..." />
+            <marker date="1442429701970" expanded="true" signature="58366:58658" placeholder="..." />
+            <marker date="1442429701970" expanded="true" signature="58366:58673" placeholder="..." />
+            <marker date="1442429701970" expanded="true" signature="58366:60834" placeholder="..." />
+            <marker date="1442429701970" expanded="true" signature="58366:60849" placeholder="..." />
           </folding>
         </state>
       </provider>

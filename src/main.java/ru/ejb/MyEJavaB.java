@@ -3,6 +3,7 @@ package ru.ejb;
 import models.Person;
 
 import javax.ejb.Stateful;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class MyEJavaB implements MyEJavaBRemote {
 
     @Override
     public List<Person> listOfPersons() {
-        return persons;
+        return getPersons();
     }
 
     @Override
@@ -58,5 +59,16 @@ public class MyEJavaB implements MyEJavaBRemote {
         if (id != null){
             persons.remove(id.intValue());
         }
+    }
+
+    public List<Person> getPersons() {
+        if (persons == null){
+            persons = new ArrayList<Person>();
+        }
+        return persons;
+    }
+
+    public void setPersons(List<Person> persons) {
+        this.persons = persons;
     }
 }

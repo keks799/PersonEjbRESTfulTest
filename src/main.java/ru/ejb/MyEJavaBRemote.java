@@ -12,15 +12,15 @@ import java.util.List;
 @Remote
 public interface MyEJavaBRemote {
 
-    public String firstMethod();
+    String firstMethod();
 
-    public List<Person> listOfPersons();
+    List<Person> listOfPersons();
 
-    public void createNewPerson(Person person);
+    void createNewPerson(Person person);
 
-    public Person pickPerson(Long id);
+    Person pickPerson(Long id);
 
-    public Person saveExistedPerson(Person existedPerson);
+    Person saveExistedPerson(Person existedPerson);
 
-    public void dropPerson(Long id);
+    void dropPerson(Long id);
 }

@@ -5,9 +5,7 @@ import ru.ejb.MyEJavaBRemote;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.Serializable;
 import java.util.List;
@@ -33,5 +31,11 @@ public class PersonRestResource implements Serializable {
     @Produces( {MediaType.APPLICATION_JSON} )
     public List<Person> listPersons() {
         return myEJavaB.listOfPersons();
+    }
+
+    @POST
+    @Path("/createPerson/{person}")
+    public void newPerson(@PathParam("person") Person person){
+        myEJavaB.createNewPerson(person);
     }
 }

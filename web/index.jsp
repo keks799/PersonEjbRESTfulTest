@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
+    <script src="/js/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="UTF-8"></script>
     <title></title>
   </head>
   <body>
-dssadf
+<script type="text/javascript">
+  $(function(){
+    console.log("dddd");
+  })
+</script>
   </body>
 </html>

@@ -26,11 +26,12 @@ public class MyEJavaB implements MyEJavaBRemote {
     }
 
     @Override
-    public void createNewPerson(Person person) {
+    public Person createNewPerson(Person person) {
         if(person.getId() == null){
             person.setId((long) (persons.size()));
         }
         persons.add(person);
+        return person;
     }
 
     @Override

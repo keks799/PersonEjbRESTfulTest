@@ -8,6 +8,9 @@ import javax.ejb.Stateful;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,8 +37,22 @@ public class PersonRestResource implements Serializable {
     }
 
     @POST
-    @Path("/createPerson/{person}")
-    public void newPerson(@PathParam("person") Person person){
-        myEJavaB.createNewPerson(person);
+    @Path("/new")
+    @Produces( {MediaType.APPLICATION_JSON} )
+    public /*Person*/String newPerson(
+            @FormParam("firstname") String firstname,
+            @FormParam("lastname") String lastname,
+            @FormParam("middlename") String middlename,
+            @FormParam("birthdate") String birthdateString
+    ){
+        Date birthdate = null;
+        try {
+            birthdate = new SimpleDateFormat("dd.MM.yyyy").parse(birthdateString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Person person = new Person(firstname, lastname, middlename, birthdate);
+        Person result = myEJavaB.createNewPerson(person);
+        return result.toString();
     }
 }

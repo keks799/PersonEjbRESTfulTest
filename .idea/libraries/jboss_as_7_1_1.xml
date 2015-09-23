@@ -1,10 +1,14 @@
 <component name="libraryTable">
   <library name="jboss-as-7.1.1">
     <CLASSES>
-      <root url="file://C:/opt/jboss-as-7.1.1.Final" />
+      <root url="file://$PROJECT_DIR$/../../jboss-as-7.1.1.Final" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
-    <jarDirectory url="file://C:/opt/jboss-as-7.1.1.Final" recursive="false" />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../jboss-as-7.1.1.Final/standalone/tmp/work/jboss.web/default-host/ejb-restWeb" />
+      <root url="file://$PROJECT_DIR$/../../jboss-as-7.1.1.Final/standalone/tmp/work/jboss.web/default-host/rest-test-ejbWeb" />
+      <root url="file://$PROJECT_DIR$/../../jboss-as-7.1.1.Final/standalone/tmp/work/jboss.web/default-host/untitledWeb" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../jboss-as-7.1.1.Final" recursive="false" />
   </library>
 </component>

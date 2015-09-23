@@ -16,7 +16,7 @@ public interface MyEJavaBRemote {
 
     List<Person> listOfPersons();
 
-    void createNewPerson(Person person);
+    Person createNewPerson(Person person);
 
     Person pickPerson(Long id);
 

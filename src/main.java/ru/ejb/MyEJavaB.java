@@ -28,9 +28,9 @@ public class MyEJavaB implements MyEJavaBRemote {
     @Override
     public Person createNewPerson(Person person) {
         if(person.getId() == null){
-            person.setId((long) (persons.size()));
+            person.setId((long) (getPersons().size()));
         }
-        persons.add(person);
+        getPersons().add(person);
         return person;
     }
 
@@ -49,7 +49,7 @@ public class MyEJavaB implements MyEJavaBRemote {
 
     @Override
     public Person saveExistedPerson(Person existedPerson) {
-        if(existedPerson != null) {
+        if(existedPerson != null && persons != null) {
             persons.add(existedPerson.getId().intValue(), existedPerson);
         }
         return existedPerson;

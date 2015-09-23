@@ -12,6 +12,13 @@ public class Person implements Serializable {
     public Person() {
     }
 
+    public Person(String firstname, String lastname, String middlename, Date birthDate) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.middlename = middlename;
+        this.birthday = birthDate;
+    }
+
     private Long id;
 
     private String firstname;

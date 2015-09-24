@@ -19,9 +19,41 @@
         $(".formTextInput:not(.dateInput)").val("test");
         $(".dateInput").val("12.12.1212");
         //test
-    })
+
+        $("#personForm").on().submit(function(e){
+            e.preventDefault();
+            var formData = $("#personForm").serialize();
+
+            $.ajax({
+                type: "POST",
+                url: 'rs/person/new',
+                data: formData,
+                dataType: 'json',
+                success: function(data) {
+                    appendRowToList();
+                }
+            });
+            return 0;
+        })
+    });
+
+    function appendRowToList(){
+        var rowHtml = '<tr><td clas="appendedRow firstName"></td><td clas="appendedRow middleName"></td>' +
+                '<td clas="appendedRow lastName"></td><td clas="appendedRow dateOfBirth"></td></tr>';
+
+        var tableHtml = '<table id="personListedTable"><th class="firstNameTh">Имя</th><th class="middleNameTh">Отчество</th>' +
+                '<th class="lastNameTh">Фамилия</th><th class="dateOfBirthTh">Дата рождения</th></table>';
+
+        if ($("#personListedTable").size() == 0) {
+            $("#personForm").after(tableHtml);
+            $("#personListedTable th:last").after(rowHtml);
+        } else {
+            $("#personListedTable tr:last").after(rowHtml);
+        }
+    }
 </script>
-<form action="rs/person/new" method="POST">
+
+<form action="rs/person/new" method="POST" id="personForm">
     <table>
         <tr>
             <td>
@@ -58,5 +90,8 @@
     </table>
     <input type="submit" value="Save">
 </form>
+<div id="personList">
+
+</div>
 </body>
 </html>

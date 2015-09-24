@@ -3,6 +3,7 @@ package ru.ejb;
 import models.Person;
 
 import javax.ejb.Stateful;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  */
 
 @Stateful
-public class MyEJavaB implements MyEJavaBRemote {
+public class MyEJavaB implements MyEJavaBRemote, Serializable {
 
     private List<Person> persons;
 
@@ -67,9 +68,5 @@ public class MyEJavaB implements MyEJavaBRemote {
             persons = new ArrayList<Person>();
         }
         return persons;
-    }
-
-    public void setPersons(List<Person> persons) {
-        this.persons = persons;
     }
 }

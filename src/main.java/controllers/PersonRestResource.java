@@ -5,6 +5,7 @@ import ru.ejb.MyEJavaBRemote;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
+import javax.enterprise.context.SessionScoped;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -18,8 +19,9 @@ import java.util.List;
  * Created by Business_Book on 11.09.2015.
  */
 
-@Stateful
 @Path("/person")
+@Stateful
+@SessionScoped
 public class PersonRestResource implements Serializable {
     @EJB
     private MyEJavaBRemote myEJavaB;

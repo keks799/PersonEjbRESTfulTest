@@ -16,7 +16,7 @@ public class Person implements Serializable {
         this.firstname = firstname;
         this.lastname = lastname;
         this.middlename = middlename;
-        this.birthday = birthDate;
+        this.birthDate = birthDate;
     }
 
     private Long id;
@@ -27,7 +27,7 @@ public class Person implements Serializable {
 
     private String middlename;
 
-    private Date birthday;
+    private Date birthDate;
 
     public String getFirstname() {
         return firstname;
@@ -53,12 +53,12 @@ public class Person implements Serializable {
         this.middlename = middlename;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public Long getId() {

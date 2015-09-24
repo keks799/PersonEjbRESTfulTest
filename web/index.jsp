@@ -15,9 +15,13 @@
 <script type="text/javascript">
     $(function () {
         console.log("loaded!");
+        //test
+        $(".formTextInput:not(.dateInput)").val("test");
+        $(".dateInput").val("12.12.1212");
+        //test
     })
 </script>
-<form action="ws/person/new" method="POST">
+<form action="rs/person/new" method="POST">
     <table>
         <tr>
             <td>

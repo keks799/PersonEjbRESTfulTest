@@ -7,6 +7,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateful;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -37,9 +38,9 @@ public class PersonRestResource implements Serializable {
     }
 
     @POST
-    @Path("/new")
     @Produces( {MediaType.APPLICATION_JSON} )
-    public /*Person*/String newPerson(
+    @Path("/new")
+    public Response newPerson(
             @FormParam("firstname") String firstname,
             @FormParam("lastname") String lastname,
             @FormParam("middlename") String middlename,
@@ -53,6 +54,6 @@ public class PersonRestResource implements Serializable {
         }
         Person person = new Person(firstname, lastname, middlename, birthdate);
         Person result = myEJavaB.createNewPerson(person);
-        return result.toString();
+        return Response.status(201).entity(result).build();
     }
 }

@@ -16,11 +16,9 @@ public interface MyEJavaBRemote {
 
     List<Person> listOfPersons();
 
-    Person createNewPerson(Person person);
+    Person savePerson(Person person);
 
     Person pickPerson(Long id);
-
-    Person saveExistedPerson(Person existedPerson);
 
     void dropPerson(Long id);
 }

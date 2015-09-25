@@ -56,7 +56,7 @@ public class PersonRestResource implements Serializable {
             e.printStackTrace();
         }
         Person person = new Person(firstname, lastname, middlename, birthdate);
-        Person result = myEJavaB.createNewPerson(person);
+        Person result = myEJavaB.savePerson(person);
         return Response.status(201).entity(Collections.singletonList(result)).build();
     }
 }

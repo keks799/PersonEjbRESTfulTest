@@ -27,11 +27,13 @@ public class MyEJavaB implements MyEJavaBRemote, Serializable {
     }
 
     @Override
-    public Person createNewPerson(Person person) {
+    public Person savePerson(Person person) {
         if(person.getId() == null){
             person.setId((long) (getPersons().size()));
+            getPersons().add(person);
+        } else {
+            getPersons().add(person.getId().intValue(), person);
         }
-        getPersons().add(person);
         return person;
     }
 
@@ -46,14 +48,6 @@ public class MyEJavaB implements MyEJavaBRemote, Serializable {
             }
         }
         return person;
-    }
-
-    @Override
-    public Person saveExistedPerson(Person existedPerson) {
-        if(existedPerson != null && persons != null) {
-            persons.add(existedPerson.getId().intValue(), existedPerson);
-        }
-        return existedPerson;
     }
 
     @Override

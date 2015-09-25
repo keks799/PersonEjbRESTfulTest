@@ -20,6 +20,8 @@
         $(".dateInput").val("12.12.1212");
         //test
 
+        getExistedPersonList();
+
         $("#personForm").on().submit(function(e){
             e.preventDefault();
             var formData = $("#personForm").serialize();
@@ -30,26 +32,65 @@
                 data: formData,
                 dataType: 'json',
                 success: function(data) {
-                    appendRowToList();
+                    displayPersonTable(data);
+                },
+                error: function(data) {
+                    alert("An error has occurred!")
                 }
             });
             return 0;
         })
     });
 
-    function appendRowToList(){
-        var rowHtml = '<tr><td clas="appendedRow firstName"></td><td clas="appendedRow middleName"></td>' +
-                '<td clas="appendedRow lastName"></td><td clas="appendedRow dateOfBirth"></td></tr>';
+    function getExistedPersonList(){
+        $.ajax({
+            type: "GET",
+            url: 'rs/person/all',
+            success: function(data) {
+                displayPersonTable(data);
+            },
+            error: function(data) {
+                alert("An error has occurred!")
+            }
+        });
+    }
 
-        var tableHtml = '<table id="personListedTable"><th class="firstNameTh">Имя</th><th class="middleNameTh">Отчество</th>' +
-                '<th class="lastNameTh">Фамилия</th><th class="dateOfBirthTh">Дата рождения</th></table>';
+    function displayPersonTable(data){
+        debugger;
+        if (data.length != 0) {
+            for (var i = 0; i < data.length; i++) {
+                appendRowToList();
+                var date = new Date(data[i].birthDate);
+                var day = date.getUTCDate() + 1;
+                var month = date.getUTCMonth() + 1;
+                var year = date.getUTCFullYear();
+
+                if(day < 10) {
+                    day = "0" + day;
+                }
+                if(month < 10) {
+                    month = "0" + month;
+                }
+                $(".firstName:last").text(data[i].firstName);
+                $(".middleName:last").text(data[i].middleName);
+                $(".lastName:last").text(data[i].lastName);
+                $(".dateOfBirth:last").text(day + "/" + month + "/" + year);
+            }
+        }
+    }
+
+    function appendRowToList(){
+        var rowHtml = '<tr><td class="appendedRow firstName"></td><td class="appendedRow middleName"></td>' +
+                '<td class="appendedRow lastName"></td><td class="appendedRow dateOfBirth"></td></tr>';
+
+        var tableHtml = '<table id="personListedTable"><tr class="header"><th class="firstName th">Имя</th><th class="middleName th">Отчество</th>' +
+                '<th class="lastName th">Фамилия</th><th class="dateOfBirth th">Дата рождения</th></tr></table>';
 
         if ($("#personListedTable").size() == 0) {
             $("#personForm").after(tableHtml);
-            $("#personListedTable th:last").after(rowHtml);
-        } else {
-            $("#personListedTable tr:last").after(rowHtml);
+            $("#personListedTable tr.header").after(rowHtml);
         }
+        $("#personListedTable tr:last").after(rowHtml);
     }
 </script>
 
@@ -60,7 +101,7 @@
                 Name:
             </td>
             <td>
-                <input type="text" name="firstname" id="firstname" class="formTextInput">
+                <input type="text" name="firstName" id="firstName" class="formTextInput">
             </td>
         </tr>
         <tr>
@@ -68,7 +109,7 @@
                 Family Name:
             </td>
             <td>
-                <input type="text" name="lastname" id="lastname" class="formTextInput">
+                <input type="text" name="lastName" id="lastName" class="formTextInput">
             </td>
         </tr>
         <tr>
@@ -76,7 +117,7 @@
                 Middle Name:
             </td>
             <td>
-                <input type="text" name="middlename" id="middlename" class="formTextInput">
+                <input type="text" name="middleName" id="middleName" class="formTextInput">
             </td>
         </tr>
         <tr>
@@ -84,7 +125,7 @@
                 Birth Date:
             </td>
             <td>
-                <input type="text" name="birthdate" id="birthdate" class="formTextInput dateInput">
+                <input type="text" name="birthDate" id="birthdate" class="formTextInput dateInput">
             </td>
         </tr>
     </table>

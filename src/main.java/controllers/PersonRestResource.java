@@ -12,6 +12,7 @@ import javax.ws.rs.core.Response;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -43,10 +44,10 @@ public class PersonRestResource implements Serializable {
     @Produces( {MediaType.APPLICATION_JSON} )
     @Path("/new")
     public Response newPerson(
-            @FormParam("firstname") String firstname,
-            @FormParam("lastname") String lastname,
-            @FormParam("middlename") String middlename,
-            @FormParam("birthdate") String birthdateString
+            @FormParam("firstName") String firstname,
+            @FormParam("lastName") String lastname,
+            @FormParam("middleName") String middlename,
+            @FormParam("birthDate") String birthdateString
     ){
         Date birthdate = null;
         try {
@@ -56,6 +57,6 @@ public class PersonRestResource implements Serializable {
         }
         Person person = new Person(firstname, lastname, middlename, birthdate);
         Person result = myEJavaB.createNewPerson(person);
-        return Response.status(201).entity(result).build();
+        return Response.status(201).entity(Collections.singletonList(result)).build();
     }
 }

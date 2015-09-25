@@ -7,7 +7,7 @@
     <groupId>ru.ejb.rest</groupId>
     <artifactId>ejb-restful</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>org.wildfly</groupId>

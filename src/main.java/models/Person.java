@@ -12,45 +12,45 @@ public class Person implements Serializable {
     public Person() {
     }
 
-    public Person(String firstname, String lastname, String middlename, Date birthDate) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.middlename = middlename;
+    public Person(String firstName, String lastName, String middleName, Date birthDate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
         this.birthDate = birthDate;
     }
 
     private Long id;
 
-    private String firstname;
+    private String firstName;
 
-    private String lastname;
+    private String lastName;
 
-    private String middlename;
+    private String middleName;
 
     private Date birthDate;
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getMiddlename() {
-        return middlename;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public void setMiddlename(String middlename) {
-        this.middlename = middlename;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     public Date getBirthDate() {

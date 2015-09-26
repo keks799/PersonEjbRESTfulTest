@@ -40,6 +40,10 @@
             });
             return 0;
         });
+
+        $("span.del").on().click(function(){
+            alert("dd");
+        });
     });
 
     function getExistedPersonList() {
@@ -58,7 +62,6 @@
     function displayPersonTable(data) {
         if (data.length != 0) {
             for (var i = 0; i < data.length; i++) {
-                appendRowToList();
                 var date = new Date(data[i].birthDate);
                 var day = date.getUTCDate() + 1;
                 var month = date.getUTCMonth() + 1;
@@ -74,24 +77,22 @@
                 $(".middleName:last").text(data[i].middleName);
                 $(".lastName:last").text(data[i].lastName);
                 $(".dateOfBirth:last").text(day + "/" + month + "/" + year);
+                if(!$("#personListedTable").is(":visible")) {
+                    $("#personListedTable").fadeIn();
+                }
+                $("tr.appendedRow").fadeIn();
+
+                appendRowToList();
             }
         }
     }
 
     function appendRowToList() {
-        var rowHtml = '<tr><td class="appendedRow firstName"></td><td class="appendedRow middleName"></td>' +
+        var rowHtml = '<tr style="display: none;" class="appendedRow"><td class="appendedRow firstName"></td><td class="appendedRow middleName"></td>' +
                 '<td class="appendedRow lastName"></td><td class="appendedRow dateOfBirth"></td><td class="edit"><input type="checkbox" class="editChB"></td>' +
                 '<td><span class="del" style="cursor: pointer">X</span></td></tr>';
 
-        var tableHtml = '<table id="personListedTable"><tr class="header"><th class="firstName th">Имя</th><th class="middleName th">Отчество</th>' +
-                '<th class="lastName th">Фамилия</th><th class="dateOfBirth th">Дата рождения</th><th>Edit</th><th>Drop</th></tr></table>';
-
-        if ($("#personListedTable").size() == 0) {
-            $("#personForm").after(tableHtml);
-            $("#personListedTable tr.header").after(rowHtml);
-        } else {
-            $("#personListedTable tr:last").after(rowHtml);
-        }
+        $("#personListedTable tr:last").after(rowHtml);
     }
 </script>
 
@@ -133,7 +134,28 @@
     </table>
     <input type="submit" value="Save">
 </form>
-<div id="personList">
+<table id="personListedTable" style="display: none;">
+    <tr class="header">
+        <th class="firstName th">Имя</th>
+        <th class="middleName th">Отчество</th>
+        <th class="lastName th">Фамилия</th>
+        <th class="dateOfBirth th">Дата рождения</th>
+        <th>Edit</th>
+        <th>Drop</th>
+    </tr>
+    <tr style="display: none;" class="appendedRow">
+        <td class="appendedRow firstName"></td>
+        <td class="appendedRow middleName"></td>
+        <td class="appendedRow lastName"></td>
+        <td class="appendedRow dateOfBirth"></td>
+        <td class="edit">
+            <input type="checkbox" class="editChB">
+        </td>
+        <td>
+            <span class="del" style="cursor: pointer">X</span>
+        </td>
+    </tr>
+</table>
 
 </div>
 </body>

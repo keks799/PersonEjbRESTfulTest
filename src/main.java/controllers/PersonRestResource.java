@@ -42,25 +42,25 @@ public class PersonRestResource implements Serializable {
     @Produces( {MediaType.APPLICATION_JSON} )
     @Path("/new")
     public Response newPerson(
-            @FormParam("firstName") String firstname,
-            @FormParam("lastName") String lastname,
-            @FormParam("middleName") String middlename,
-            @FormParam("birthDate") String birthdateString
+            @FormParam("firstName") String firstName,
+            @FormParam("lastName") String lastName,
+            @FormParam("middleName") String middleName,
+            @FormParam("birthDate") String birthDateString
     ){
-        Date birthdate = getDate(birthdateString);
-        Person person = new Person(firstname, lastname, middlename, birthdate);
+        Date birthDate = getDate(birthDateString);
+        Person person = new Person(firstName, lastName, middleName, birthDate);
         Person result = myEJavaB.savePerson(person);
         return Response.status(201).entity(Collections.singletonList(result)).build();
     }
 
-    private Date getDate(@FormParam("birthDate") String birthdateString) {
-        Date birthdate = null;
+    private Date getDate(@FormParam("birthDate") String birthDateString) {
+        Date birthDate = null;
         try {
-            birthdate = new SimpleDateFormat("dd.MM.yyyy").parse(birthdateString);
+            birthDate = new SimpleDateFormat("dd.MM.yyyy").parse(birthDateString);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return birthdate;
+        return birthDate;
     }
 
     @POST
@@ -68,12 +68,12 @@ public class PersonRestResource implements Serializable {
     @Path("/edit")
     public Response editPerson(
             @FormParam("id") Long id,
-            @FormParam("firstName") String firstname,
-            @FormParam("lastName") String lastname,
-            @FormParam("middleName") String middlename,
-            @FormParam("birthDate") String birthdateString
+            @FormParam("firstName") String firstName,
+            @FormParam("lastName") String lastName,
+            @FormParam("middleName") String middleName,
+            @FormParam("birthDate") String birthDateString
     ) {
-        Person person = new Person(id, firstname, lastname, middlename, getDate(birthdateString));
+        Person person = new Person(id, firstName, lastName, middleName, getDate(birthDateString));
         person = myEJavaB.savePerson(person);
         return Response.status(201).entity(person).build();
     }

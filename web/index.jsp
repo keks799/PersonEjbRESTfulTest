@@ -14,6 +14,7 @@
 <body>
 <script type="text/javascript">
     $(function () {
+        var mainFormAction = 'rs/person/new';
         console.log("loaded!");
         //test
         $(".formTextInput:not(.dateInput)").val("test");
@@ -22,13 +23,13 @@
 
         getExistedPersonList();
 
-        $("#personForm").on().submit(function (e) {
+        $("#personForm").submit(function (e) {
             e.preventDefault();
             var formData = $("#personForm").serialize();
 
             $.ajax({
                 type: "POST",
-                url: 'rs/person/new',
+                url: mainFormAction,
                 data: formData,
                 dataType: 'json',
                 success: function (data) {
@@ -41,7 +42,7 @@
             return 0;
         });
 
-        $("span.del").on().click(function(){
+        $("#personListedTable").on("click", ".del", function(){
             var selectedTr = $(this).parents("tr");
             var id = selectedTr.attr("id");
             $.ajax({
@@ -56,6 +57,23 @@
                     alert("An error has occurred!")
                 }
             });
+        });
+
+        $("#personListedTable").on("click", ".edit", function(){
+            var selectedTr = $(this).parents("tr");
+            var id = selectedTr.attr("id");
+            var firstName = selectedTr.find(".firstName").text();
+            var middleName = selectedTr.find(".middleName").text();
+            var lastName = selectedTr.find(".lastName").text();
+            var birthDate = selectedTr.find(".birthDate").text();
+
+            $("#id").val(id);
+            $("#firstName").val(firstName);
+            $("#middleName").val(middleName);
+            $("#lastName").val(lastName);
+            $("#birthDate").val(birthDate);
+            $("#submitButton").val("Edit");
+            mainFormAction = 'rs/person/edit'
         });
     });
 
@@ -90,7 +108,7 @@
                 $(".firstName:last").text(data[i].firstName);
                 $(".middleName:last").text(data[i].middleName);
                 $(".lastName:last").text(data[i].lastName);
-                $(".dateOfBirth:last").text(day + "/" + month + "/" + year);
+                $(".birthDate:last").text(day + "/" + month + "/" + year);
                 if(!$("#personListedTable").is(":visible")) {
                     $("#personListedTable").fadeIn();
                 }
@@ -103,14 +121,14 @@
 
     function appendRowToList() {
         var rowHtml = '<tr style="display: none;" class="appendedRow"><td class="appendedRow firstName"></td><td class="appendedRow middleName"></td>' +
-                '<td class="appendedRow lastName"></td><td class="appendedRow dateOfBirth"></td><td class="edit"><input type="checkbox" class="editChB"></td>' +
+                '<td class="appendedRow lastName"></td><td class="appendedRow birthDate"></td><td class="edit"><span class="edit" style="cursor: pointer">[e]</span></td>' +
                 '<td><span class="del" style="cursor: pointer">X</span></td></tr>';
 
         $("#personListedTable tr:last").after(rowHtml);
     }
 </script>
 
-<form action="rs/person/new" method="POST" id="personForm">
+<form method="POST" id="personForm">
     <input type="hidden" name="id"/>
     <table>
         <tr>
@@ -123,14 +141,6 @@
         </tr>
         <tr>
             <td>
-                Family Name:
-            </td>
-            <td>
-                <input type="text" name="lastName" id="lastName" class="formTextInput">
-            </td>
-        </tr>
-        <tr>
-            <td>
                 Middle Name:
             </td>
             <td>
@@ -139,10 +149,18 @@
         </tr>
         <tr>
             <td>
+                Family Name:
+            </td>
+            <td>
+                <input type="text" name="lastName" id="lastName" class="formTextInput">
+            </td>
+        </tr>
+        <tr>
+            <td>
                 Birth Date:
             </td>
             <td>
-                <input type="text" name="birthDate" id="birthdate" class="formTextInput dateInput">
+                <input type="text" name="birthDate" id="birthDate" class="formTextInput dateInput">
             </td>
         </tr>
     </table>
@@ -153,7 +171,7 @@
         <th class="firstName th">Имя</th>
         <th class="middleName th">Отчество</th>
         <th class="lastName th">Фамилия</th>
-        <th class="dateOfBirth th">Дата рождения</th>
+        <th class="birthDate th">Дата рождения</th>
         <th>Edit</th>
         <th>Drop</th>
     </tr>
@@ -161,9 +179,9 @@
         <td class="appendedRow firstName"></td>
         <td class="appendedRow middleName"></td>
         <td class="appendedRow lastName"></td>
-        <td class="appendedRow dateOfBirth"></td>
-        <td class="edit">
-            <input type="checkbox" class="editChB">
+        <td class="appendedRow birthDate"></td>
+        <td>
+            <span class="edit" style="cursor: pointer">[e]</span>
         </td>
         <td>
             <span class="del" style="cursor: pointer">X</span>

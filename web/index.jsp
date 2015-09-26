@@ -42,7 +42,20 @@
         });
 
         $("span.del").on().click(function(){
-            alert("dd");
+            var selectedTr = $(this).parents("tr");
+            var id = selectedTr.attr("id");
+            $.ajax({
+                type: "POST",
+                url: 'rs/person/delete/' + id,
+                dataType: 'json',
+                success: function (data) {
+                    selectedTr.fadeOut();
+                    selectedTr.remove();
+                },
+                error: function (data) {
+                    alert("An error has occurred!")
+                }
+            });
         });
     });
 
@@ -73,6 +86,7 @@
                 if (month < 10) {
                     month = "0" + month;
                 }
+                $("tr:last").attr("id", data[i].id);
                 $(".firstName:last").text(data[i].firstName);
                 $(".middleName:last").text(data[i].middleName);
                 $(".lastName:last").text(data[i].lastName);
@@ -132,7 +146,7 @@
             </td>
         </tr>
     </table>
-    <input type="submit" value="Save">
+    <input type="submit" value="Save" id="submitButton">
 </form>
 <table id="personListedTable" style="display: none;">
     <tr class="header">

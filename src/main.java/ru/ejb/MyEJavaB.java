@@ -51,10 +51,16 @@ public class MyEJavaB implements MyEJavaBRemote, Serializable {
     }
 
     @Override
-    public void dropPerson(Long id) {
+    public boolean dropPerson(Long id) {
         if (id != null){
-            persons.remove(id.intValue());
+            for(Person person : persons) {
+                if(person.getId() == id) {
+                    persons.remove(id.intValue());
+                    return true;
+                }
+            }
         }
+        return false;
     }
 
     public List<Person> getPersons() {

@@ -83,13 +83,13 @@ public class PersonRestResource implements Serializable {
     @Produces( {MediaType.TEXT_PLAIN} )
     @Path("/delete/{id}")
     public Response dropPerson(@PathParam("id") String id){
-        checkAndDrop(id);
-        return Response.status(201).entity("Success!").build();
+        return Response.status(201).entity(checkAndDrop(id)).build(); //todo change status number to deleted
     }
 
-    private void checkAndDrop(String id) {
+    private boolean checkAndDrop(String id) {
         if(id.matches("\\d+")) {
-            myEJavaB.dropPerson(Long.decode(id));
+            return myEJavaB.dropPerson(Long.decode(id));
         }
+        return false;
     }
 }

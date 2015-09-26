@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9efc89a9-6a4e-48dc-81dd-4900aef5738c" name="Default" comment="">
+    <list default="true" id="9efc89a9-6a4e-48dc-81dd-4900aef5738c" name="Default" comment="drop person form">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java" afterPath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaBRemote.java" afterPath="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaBRemote.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java" afterPath="$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -46,11 +49,11 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84444445">
-              <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.26296297">
+              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
               <folding>
-                <marker date="1443273723348" expanded="true" signature="2692:2706" placeholder="..." />
-                <marker date="1443273723348" expanded="true" signature="3018:3033" placeholder="..." />
+                <marker date="1443275602128" expanded="true" signature="3220:3234" placeholder="..." />
+                <marker date="1443275602128" expanded="true" signature="3546:3561" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -60,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#453#454#0" expanded="true" />
@@ -84,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="59" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+              <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#806#807#0" expanded="true" />
@@ -98,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaBRemote.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -135,8 +138,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main.java/MyServlet.java" />
         <option value="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaBRemote.java" />
-        <option value="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java" />
         <option value="$PROJECT_DIR$/src/main.java/models/Person.java" />
+        <option value="$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java" />
         <option value="$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
       </list>
@@ -716,7 +719,7 @@
       <workItem from="1443039312349" duration="1537000" />
       <workItem from="1443072231745" duration="10272000" />
       <workItem from="1443160375209" duration="9005000" />
-      <workItem from="1443267289213" duration="6607000" />
+      <workItem from="1443267289213" duration="8300000" />
     </task>
     <task id="LOCAL-00001" summary="worked configuration">
       <created>1442250754338</created>
@@ -784,11 +787,17 @@
       <option name="project" value="LOCAL" />
       <updated>1443272199698</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="rethought appending &amp; display">
+      <created>1443273919239</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1443273919239</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61871000" />
+    <option name="totallyTimeSpent" value="63564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -892,11 +901,20 @@
     <MESSAGE value="dropped servlet" />
     <MESSAGE value="CRUD method realisations" />
     <MESSAGE value="rethought drop" />
-    <option name="LAST_COMMIT_MESSAGE" value="rethought drop" />
+    <MESSAGE value="rethought appending &amp; display" />
+    <option name="LAST_COMMIT_MESSAGE" value="rethought appending &amp; display" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="29" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1324,27 +1342,15 @@
     <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaBRemote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java/controllers/PersonRestResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="59" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+          <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#806#807#0" expanded="true" />
@@ -1353,13 +1359,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java/ru/ejb/MyEJavaB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#453#454#0" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84444445">
-          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.26296297">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
           <folding>
-            <marker date="1443273723348" expanded="true" signature="2692:2706" placeholder="..." />
-            <marker date="1443273723348" expanded="true" signature="3018:3033" placeholder="..." />
+            <marker date="1443275602128" expanded="true" signature="3220:3234" placeholder="..." />
+            <marker date="1443275602128" expanded="true" signature="3546:3561" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -20,5 +20,5 @@ public interface MyEJavaBRemote {
 
     Person pickPerson(Long id);
 
-    void dropPerson(Long id);
+    boolean dropPerson(Long id);
 }

@@ -80,18 +80,10 @@ public class PersonRestResource implements Serializable {
 
 
     @POST // TODO @DELETE ?
-    @Consumes( {MediaType.TEXT_PLAIN} )
     @Produces( {MediaType.TEXT_PLAIN} )
-    @Path("/delete")
-    public Response dropPerson(String idsToDelete){
-        if(idsToDelete.contains(",")){
-            List<String> idsList = Arrays.asList(idsToDelete.split(","));
-            for(String id : idsList) {
-                checkAndDrop(id);
-            }
-        } else {
-            checkAndDrop(idsToDelete);
-        }
+    @Path("/delete/{id}")
+    public Response dropPerson(@PathParam("id") String id){
+        checkAndDrop(id);
         return Response.status(201).entity("Success!").build();
     }
 

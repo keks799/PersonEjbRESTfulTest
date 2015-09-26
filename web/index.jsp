@@ -22,7 +22,7 @@
 
         getExistedPersonList();
 
-        $("#personForm").on().submit(function(e){
+        $("#personForm").on().submit(function (e) {
             e.preventDefault();
             var formData = $("#personForm").serialize();
 
@@ -31,10 +31,10 @@
                 url: 'rs/person/new',
                 data: formData,
                 dataType: 'json',
-                success: function(data) {
+                success: function (data) {
                     displayPersonTable(data);
                 },
-                error: function(data) {
+                error: function (data) {
                     alert("An error has occurred!")
                 }
             });
@@ -42,20 +42,20 @@
         });
     });
 
-    function getExistedPersonList(){
+    function getExistedPersonList() {
         $.ajax({
             type: "GET",
             url: 'rs/person/all',
-            success: function(data) {
+            success: function (data) {
                 displayPersonTable(data);
             },
-            error: function(data) {
+            error: function (data) {
                 alert("An error has occurred!")
             }
         });
     }
 
-    function displayPersonTable(data){
+    function displayPersonTable(data) {
         if (data.length != 0) {
             for (var i = 0; i < data.length; i++) {
                 appendRowToList();
@@ -64,10 +64,10 @@
                 var month = date.getUTCMonth() + 1;
                 var year = date.getUTCFullYear();
 
-                if(day < 10) {
+                if (day < 10) {
                     day = "0" + day;
                 }
-                if(month < 10) {
+                if (month < 10) {
                     month = "0" + month;
                 }
                 $(".firstName:last").text(data[i].firstName);
@@ -78,12 +78,13 @@
         }
     }
 
-    function appendRowToList(){
+    function appendRowToList() {
         var rowHtml = '<tr><td class="appendedRow firstName"></td><td class="appendedRow middleName"></td>' +
-                '<td class="appendedRow lastName"></td><td class="appendedRow dateOfBirth"></td><td class="edit">Edit</td><td class="del">Delete</td></tr>';
+                '<td class="appendedRow lastName"></td><td class="appendedRow dateOfBirth"></td><td class="edit"><input type="checkbox" class="editChB"></td>' +
+                '<td><span class="del" style="cursor: pointer">X</span></td></tr>';
 
         var tableHtml = '<table id="personListedTable"><tr class="header"><th class="firstName th">Имя</th><th class="middleName th">Отчество</th>' +
-                '<th class="lastName th">Фамилия</th><th class="dateOfBirth th">Дата рождения</th><th></th><th></th></tr></table>';
+                '<th class="lastName th">Фамилия</th><th class="dateOfBirth th">Дата рождения</th><th>Edit</th><th>Drop</th></tr></table>';
 
         if ($("#personListedTable").size() == 0) {
             $("#personForm").after(tableHtml);
@@ -95,7 +96,7 @@
 </script>
 
 <form action="rs/person/new" method="POST" id="personForm">
-    <input type="hidden" name="id" />
+    <input type="hidden" name="id"/>
     <table>
         <tr>
             <td>

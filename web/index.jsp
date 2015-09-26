@@ -39,7 +39,7 @@
                 }
             });
             return 0;
-        })
+        });
     });
 
     function getExistedPersonList(){
@@ -56,7 +56,6 @@
     }
 
     function displayPersonTable(data){
-        debugger;
         if (data.length != 0) {
             for (var i = 0; i < data.length; i++) {
                 appendRowToList();
@@ -81,20 +80,22 @@
 
     function appendRowToList(){
         var rowHtml = '<tr><td class="appendedRow firstName"></td><td class="appendedRow middleName"></td>' +
-                '<td class="appendedRow lastName"></td><td class="appendedRow dateOfBirth"></td></tr>';
+                '<td class="appendedRow lastName"></td><td class="appendedRow dateOfBirth"></td><td class="edit">Edit</td><td class="del">Delete</td></tr>';
 
         var tableHtml = '<table id="personListedTable"><tr class="header"><th class="firstName th">Имя</th><th class="middleName th">Отчество</th>' +
-                '<th class="lastName th">Фамилия</th><th class="dateOfBirth th">Дата рождения</th></tr></table>';
+                '<th class="lastName th">Фамилия</th><th class="dateOfBirth th">Дата рождения</th><th></th><th></th></tr></table>';
 
         if ($("#personListedTable").size() == 0) {
             $("#personForm").after(tableHtml);
             $("#personListedTable tr.header").after(rowHtml);
+        } else {
+            $("#personListedTable tr:last").after(rowHtml);
         }
-        $("#personListedTable tr:last").after(rowHtml);
     }
 </script>
 
 <form action="rs/person/new" method="POST" id="personForm">
+    <input type="hidden" name="id" />
     <table>
         <tr>
             <td>

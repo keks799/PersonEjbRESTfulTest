@@ -55,7 +55,8 @@ public class MyEJavaB implements MyEJavaBRemote, Serializable {
         if (id != null){
             for(Person person : persons) {
                 if(person.getId() == id) {
-                    persons.remove(id.intValue());
+                    persons.remove(person);
+                    System.out.println("removed person with id " + person.getId());
                     return true;
                 }
             }

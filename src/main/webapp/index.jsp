@@ -10,6 +10,9 @@
 <head>
     <script src="js/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="UTF-8"></script>
     <script src="js/jquery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="js/jquery/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/jquery/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="js/jquery/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
     <title></title>
 </head>
 <body>
@@ -21,7 +24,9 @@
         $(".formTextInput:not(.dateInput)").val("test");
         $(".dateInput").val("12.12.1971");
         //test
-
+        $(".dateInput").datepicker({
+            dateFormat: "dd.mm.yy"
+        });
         getExistedPersonList();
 
         $("#personForm").submit(function (e) {

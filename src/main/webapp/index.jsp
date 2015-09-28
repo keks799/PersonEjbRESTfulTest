@@ -9,12 +9,13 @@
 <html>
 <head>
     <script src="js/jquery/jquery-2.1.4.min.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="js/jquery/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
     <title></title>
 </head>
 <body>
 <script type="text/javascript">
+    var mainFormAction = 'rs/person/new';
     $(function () {
-        var mainFormAction = 'rs/person/new';
         console.log("loaded!");
         //test
         $(".formTextInput:not(.dateInput)").val("test");
@@ -92,29 +93,44 @@
 
     function displayPersonTable(data) {
         if (data.length != 0) {
-            for (var i = 0; i < data.length; i++) {
-                var date = new Date(data[i].birthDate);
+            if ( Object.prototype.toString.call( data ) === '[object Array]' ) {
+                for (var i = 0; i < data.length; i++) {
+                    var date = new Date(data[i].birthDate);
+                    var day = date.getUTCDate() + 1;
+                    var month = date.getUTCMonth() + 1;
+                    var year = date.getUTCFullYear();
+
+                    if (day < 10) {
+                        day = "0" + day;
+                    }
+                    if (month < 10) {
+                        month = "0" + month;
+                    }
+                    $("tr:last").attr("id", data[i].id);
+                    $(".firstName:last").text(data[i].firstName);
+                    $(".middleName:last").text(data[i].middleName);
+                    $(".lastName:last").text(data[i].lastName);
+                    $(".birthDate:last").text(day + "." + month + "." + year);
+                    if (!$("#personListedTable").is(":visible")) {
+                        $("#personListedTable").fadeIn();
+                    }
+                    $("tr.appendedRow").fadeIn();
+
+                    appendRowToList();
+                }
+            } else {
+                var date = new Date(data.birthDate);
                 var day = date.getUTCDate() + 1;
                 var month = date.getUTCMonth() + 1;
                 var year = date.getUTCFullYear();
-
-                if (day < 10) {
-                    day = "0" + day;
-                }
-                if (month < 10) {
-                    month = "0" + month;
-                }
-                $("tr:last").attr("id", data[i].id);
-                $(".firstName:last").text(data[i].firstName);
-                $(".middleName:last").text(data[i].middleName);
-                $(".lastName:last").text(data[i].lastName);
-                $(".birthDate:last").text(day + "." + month + "." + year);
-                if(!$("#personListedTable").is(":visible")) {
-                    $("#personListedTable").fadeIn();
-                }
-                $("tr.appendedRow").fadeIn();
-
-                appendRowToList();
+                var editedTr = $("#personListedTable").find("tr#" + data.id);
+                editedTr.children(".firstName").text(data.firstName);
+                editedTr.children(".middleName").text(data.middleName);
+                editedTr.children(".lastName").text(data.lastName);
+                editedTr.children(".birthDate").text(day + "." + month + "." + year);
+                editedTr.effect("highlight", {color: 'red'}, 1500);
+                mainFormAction = 'rs/person/new';
+                $("#submitButton").val("Save");
             }
         }
     }

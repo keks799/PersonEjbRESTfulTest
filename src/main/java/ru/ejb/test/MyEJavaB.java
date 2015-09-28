@@ -31,8 +31,16 @@ public class MyEJavaB implements MyEJavaBRemote, Serializable {
         if(person.getId() == null){
             person.setId((long) (getPersons().size()));
             getPersons().add(person);
+            System.out.println("new person with id " + person.getId() + " has been added");
         } else {
-            getPersons().add(person.getId().intValue(), person);
+            for(int i = 0; i < getPersons().size(); i++) {
+                if(getPersons().get(i).getId().compareTo(person.getId()) == 0) {
+                    getPersons().remove(i);
+                    getPersons().add(i, person);
+                    System.out.println("person with id " + person.getId() + " has been edited");
+                    return person;
+                }
+            }
         }
         return person;
     }
@@ -54,7 +62,7 @@ public class MyEJavaB implements MyEJavaBRemote, Serializable {
     public boolean dropPerson(Long id) {
         if (id != null){
             for(Person person : persons) {
-                if(person.getId() == id) {
+                if(person.getId().compareTo(id) == 0) {
                     persons.remove(person);
                     System.out.println("removed person with id " + person.getId());
                     return true;

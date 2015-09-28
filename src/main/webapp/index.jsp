@@ -18,7 +18,7 @@
         console.log("loaded!");
         //test
         $(".formTextInput:not(.dateInput)").val("test");
-        $(".dateInput").val("12.12.1970");
+        $(".dateInput").val("12.12.1971");
         //test
 
         getExistedPersonList();
@@ -108,7 +108,7 @@
                 $(".firstName:last").text(data[i].firstName);
                 $(".middleName:last").text(data[i].middleName);
                 $(".lastName:last").text(data[i].lastName);
-                $(".birthDate:last").text(day + "/" + month + "/" + year);
+                $(".birthDate:last").text(day + "." + month + "." + year);
                 if(!$("#personListedTable").is(":visible")) {
                     $("#personListedTable").fadeIn();
                 }
@@ -129,7 +129,7 @@
 </script>
 
 <form method="POST" id="personForm">
-    <input type="hidden" name="id"/>
+    <input type="hidden" name="id" id="id"/>
     <table>
         <tr>
             <td>

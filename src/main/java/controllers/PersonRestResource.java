@@ -1,7 +1,7 @@
 package controllers;
 
 import models.Person;
-import ru.ejb.MyEJavaBRemote;
+import ru.ejb.test.MyEJavaBRemote;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
@@ -27,7 +27,7 @@ public class PersonRestResource implements Serializable {
 
     @GET
     public String getRoot(){
-        System.out.println("this is Root!!");
+        System.out.println("this is Root!!!");
         return "root";
     }
 

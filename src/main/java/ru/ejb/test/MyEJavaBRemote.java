@@ -1,4 +1,4 @@
-package ru.ejb;
+package ru.ejb.test;
 
 import models.Person;
 

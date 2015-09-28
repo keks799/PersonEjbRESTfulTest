@@ -18,7 +18,7 @@
         console.log("loaded!");
         //test
         $(".formTextInput:not(.dateInput)").val("test");
-        $(".dateInput").val("12.12.1212");
+        $(".dateInput").val("12.12.1970");
         //test
 
         getExistedPersonList();

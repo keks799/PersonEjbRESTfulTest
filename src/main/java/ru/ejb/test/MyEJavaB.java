@@ -16,6 +16,8 @@ public class MyEJavaB implements MyEJavaBRemote, Serializable {
 
     private List<Person> persons;
 
+    private Long newId = 0L;
+
     @Override
     public String firstMethod() {
         return "My First Method";
@@ -29,8 +31,9 @@ public class MyEJavaB implements MyEJavaBRemote, Serializable {
     @Override
     public Person savePerson(Person person) {
         if(person.getId() == null){
-            person.setId((long) (getPersons().size()));
+            person.setId(getNewId());
             getPersons().add(person);
+            setNewId(person.getId() + 1);
             System.out.println("new person with id " + person.getId() + " has been added");
         } else {
             for(int i = 0; i < getPersons().size(); i++) {
@@ -77,5 +80,13 @@ public class MyEJavaB implements MyEJavaBRemote, Serializable {
             persons = new ArrayList<Person>();
         }
         return persons;
+    }
+
+    public Long getNewId() {
+        return newId;
+    }
+
+    public void setNewId(Long newId) {
+        this.newId = newId;
     }
 }

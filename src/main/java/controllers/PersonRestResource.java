@@ -79,11 +79,11 @@ public class PersonRestResource implements Serializable {
     }
 
 
-    @POST // TODO @DELETE ?
+    @DELETE
     @Produces( {MediaType.TEXT_PLAIN} )
     @Path("/delete/{id}")
     public Response dropPerson(@PathParam("id") String id){
-        return Response.status(201).entity(checkAndDrop(id)).build(); //todo change status number to deleted
+        return Response.status(200).entity(checkAndDrop(id)).build();
     }
 
     private boolean checkAndDrop(String id) {

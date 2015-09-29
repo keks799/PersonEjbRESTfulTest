@@ -18,19 +18,18 @@
 <body>
 <script type="text/javascript">
     var mainFormAction = 'rs/person/new';
-    function deletePerson() {
-        var selectedTr = $(this).parents("tr");
+    function deletePerson(selectedTr) {
         var id = selectedTr.attr("id");
         $.ajax({
-            type: "POST",
+            type: "DELETE",
             url: 'rs/person/delete/' + id,
             dataType: 'json',
             success: function (data) {
+                if(selectedTr.siblings("tr.appendedRow:visible").size() == 0) {
+                    $("tr.header").fadeOut();
+                }
                 selectedTr.fadeOut();
                 selectedTr.remove();
-                if(selectedTr.siblings("tr.appendedRow:visible").size() == 0) {
-                    selectedTr.siblings(".header").fadeOut();
-                }
             },
             error: function (data) {
                 alert("An error has occurred!")
@@ -38,8 +37,7 @@
         });
     }
 
-    function editPerson() {
-        var selectedTr = $(this).parents("tr");
+    function editPerson(selectedTr) {
         var id = selectedTr.attr("id");
         var firstName = selectedTr.find(".firstName").text();
         var middleName = selectedTr.find(".middleName").text();
@@ -53,7 +51,7 @@
         $("#birthDate").val(birthDate);
         $("#submitButton").val("Edit");
         mainFormAction = 'rs/person/edit'
-        $("#personForm input[type=text]").effect("highlight", {color: 'cyan'}, 1500);
+//        $("#personForm input[type=text]").effect("highlight", {color: 'cyan'}, 1500);
     }
 
     function getExistedPersonList() {
@@ -84,7 +82,7 @@
                     if (month < 10) {
                         month = "0" + month;
                     }
-                    $("tr:last").attr("id", data[i].id);
+                    $("tr.appendedRow:last").attr("id", data[i].id);
                     $(".firstName:last").text(data[i].firstName);
                     $(".middleName:last").text(data[i].middleName);
                     $(".lastName:last").text(data[i].lastName);
@@ -123,6 +121,7 @@
             $(".header").fadeIn();
         }
         $("#personListedTable tr:last").after(rowHtml);
+        $("#personForm input:not([type=submit])").val("");
     }
 
     $(function () {
@@ -156,11 +155,11 @@
         });
 
         $("#personListedTable").on("click", ".del", function () {
-            deletePerson.call(this);
+            deletePerson($(this).parents("tr"));
         });
 
         $("#personListedTable").on("click", ".edit", function () {
-            editPerson.call(this);
+            editPerson($(this).parents("tr"));
         });
     });
 </script>

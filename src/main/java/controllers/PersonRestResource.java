@@ -1,7 +1,6 @@
 package controllers;
 
 import models.Person;
-import ru.ejb.test.MyEJavaBRemote;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
@@ -12,7 +11,9 @@ import javax.ws.rs.core.Response;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Business_Book on 11.09.2015.
@@ -23,19 +24,13 @@ import java.util.*;
 @SessionScoped
 public class PersonRestResource implements Serializable {
     @EJB
-    private MyEJavaBRemote myEJavaB;
-
-    @GET
-    public String getRoot(){
-        System.out.println("this is Root!!!");
-        return "root";
-    }
+    private PersonController personController;
 
     @GET
     @Path( "/all" )
     @Produces( {MediaType.APPLICATION_JSON} )
     public List<Person> listPersons() {
-        return myEJavaB.listOfPersons();
+        return personController.listOfPersons();
     }
 
     @POST
@@ -49,7 +44,7 @@ public class PersonRestResource implements Serializable {
     ){
         Date birthDate = getDate(birthDateString);
         Person person = new Person(firstName, lastName, middleName, birthDate);
-        Person result = myEJavaB.savePerson(person);
+        Person result = personController.savePerson(person);
         return Response.status(201).entity(Collections.singletonList(result)).build();
     }
 
@@ -74,7 +69,7 @@ public class PersonRestResource implements Serializable {
             @FormParam("birthDate") String birthDateString
     ) {
         Person person = new Person(id, firstName, lastName, middleName, getDate(birthDateString));
-        person = myEJavaB.savePerson(person);
+        person = personController.savePerson(person);
         return Response.status(201).entity(person).build();
     }
 
@@ -88,7 +83,7 @@ public class PersonRestResource implements Serializable {
 
     private boolean checkAndDrop(String id) {
         if(id.matches("\\d+")) {
-            return myEJavaB.dropPerson(Long.decode(id));
+            return personController.dropPerson(Long.decode(id));
         }
         return false;
     }

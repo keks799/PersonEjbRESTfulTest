@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="ejb-test:Web">
-    <output-path>$PROJECT_DIR$/out/artifacts/ejb_test_Web</output-path>
-    <root id="archive" name="ejb-test_Web.war">
-      <element id="artifact" artifact-name="ejb-test:Web exploded" />
-    </root>
-  </artifact>
-</component>

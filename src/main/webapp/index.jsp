@@ -50,8 +50,7 @@
         $("#lastName").val(lastName);
         $("#birthDate").val(birthDate);
         $("#submitButton").val("Edit");
-        mainFormAction = 'rs/person/edit'
-//        $("#personForm input[type=text]").effect("highlight", {color: 'cyan'}, 1500);
+        mainFormAction = 'rs/person/edit';
     }
 
     function getExistedPersonList() {
@@ -68,6 +67,15 @@
     }
 
     function displayPersonTable(data) {
+        function dayMonthNormalize() {
+            if (day < 10) {
+                day = "0" + day;
+            }
+            if (month < 10) {
+                month = "0" + month;
+            }
+        }
+
         if (data.length != 0) {
             if ( Object.prototype.toString.call( data ) === '[object Array]' ) {
                 for (var i = 0; i < data.length; i++) {
@@ -76,12 +84,7 @@
                     var month = date.getUTCMonth() + 1;
                     var year = date.getUTCFullYear();
 
-                    if (day < 10) {
-                        day = "0" + day;
-                    }
-                    if (month < 10) {
-                        month = "0" + month;
-                    }
+                    dayMonthNormalize();
                     $("tr.appendedRow:last").attr("id", data[i].id);
                     $(".firstName:last").text(data[i].firstName);
                     $(".middleName:last").text(data[i].middleName);
@@ -99,6 +102,7 @@
                 var day = date.getUTCDate() + 1;
                 var month = date.getUTCMonth() + 1;
                 var year = date.getUTCFullYear();
+                dayMonthNormalize();
                 var editedTr = $("#personListedTable").find("tr#" + data.id);
                 editedTr.children(".firstName").text(data.firstName);
                 editedTr.children(".middleName").text(data.middleName);
@@ -115,7 +119,7 @@
     function appendRowToList() {
         var rowHtml = '<tr style="display: none;" class="appendedRow"><td class="appendedRow firstName"></td><td class="appendedRow middleName"></td>' +
                 '<td class="appendedRow lastName"></td><td class="appendedRow birthDate"></td><td class="edit"><span class="edit" style="cursor: pointer">[e]</span></td>' +
-                '<td><span class="del" style="cursor: pointer">X</span></td></tr>';
+                '<td class="del"><span class="del" style="cursor: pointer">X</span></td></tr>';
 
         if(!$(".header").is(":visible")) {
             $(".header").fadeIn();
@@ -124,33 +128,45 @@
         $("#personForm input:not([type=submit])").val("");
     }
 
+    function validate() {
+        if($("#personForm input:not([type=submit]):not(#id)").filter(function() {
+            return !this.value;
+        }).length > 0) {
+            $("#personFormTable").effect("shake", {distance: 5}, 1000);
+            return false;
+        }
+        return true;
+    }
+
     $(function () {
         console.log("loaded!");
-        //test
-        $(".formTextInput:not(.dateInput)").val("test");
-        $(".dateInput").val("12.12.1971");
-        //test
+
         $(".dateInput").datepicker({
-            dateFormat: "dd.mm.yy"
+            dateFormat: "dd.mm.yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: '1900:+nn'
         });
         getExistedPersonList();
 
         $("#personForm").submit(function (e) {
             e.preventDefault();
-            var formData = $("#personForm").serialize();
+            if (validate()) {
+                var formData = $("#personForm").serialize();
 
-            $.ajax({
-                type: "POST",
-                url: mainFormAction,
-                data: formData,
-                dataType: 'json',
-                success: function (data) {
-                    displayPersonTable(data);
-                },
-                error: function (data) {
-                    alert("An error has occurred!")
-                }
-            });
+                $.ajax({
+                    type: "POST",
+                    url: mainFormAction,
+                    data: formData,
+                    dataType: 'json',
+                    success: function (data) {
+                        displayPersonTable(data);
+                    },
+                    error: function (data) {
+                        alert("An error has occurred!")
+                    }
+                });
+            }
             return 0;
         });
 
@@ -164,38 +180,51 @@
     });
 </script>
 
+<style>
+    #personFormTable tr {
+        height: 50px;
+    }
+    #personFormTable input {
+        width: 50%;
+        min-width: 500px;
+    }
+    #personListedTable {
+        width: 50%;
+        min-width: 500px;
+        border-style: dotted;
+    }
+    .header {
+        background-color: beige;
+    }
+    td.edit, td.del, td.birthDate {
+        text-align: center;
+    }
+    td.firstName, td.middleName, td.lastName {
+        text-align: right;
+    }
+</style>
+
 <form method="POST" id="personForm">
     <input type="hidden" name="id" id="id"/>
-    <table>
+    <table id="personFormTable">
         <tr>
-            <td>
-                Name:
-            </td>
-            <td>
+            <td>Name*:<br />
                 <input type="text" name="firstName" id="firstName" class="formTextInput">
             </td>
         </tr>
         <tr>
             <td>
-                Middle Name:
-            </td>
-            <td>
+                Middle Name*:<br />
                 <input type="text" name="middleName" id="middleName" class="formTextInput">
             </td>
         </tr>
         <tr>
-            <td>
-                Family Name:
-            </td>
-            <td>
+            <td>Family Name*:<br />
                 <input type="text" name="lastName" id="lastName" class="formTextInput">
             </td>
         </tr>
         <tr>
-            <td>
-                Birth Date:
-            </td>
-            <td>
+            <td>Birth Date*:<br />
                 <input type="text" name="birthDate" id="birthDate" class="formTextInput dateInput">
             </td>
         </tr>
@@ -216,10 +245,10 @@
         <td class="appendedRow middleName"></td>
         <td class="appendedRow lastName"></td>
         <td class="appendedRow birthDate"></td>
-        <td>
+        <td class="edit">
             <span class="edit" style="cursor: pointer">[e]</span>
         </td>
-        <td>
+        <td class="del">
             <span class="del" style="cursor: pointer">X</span>
         </td>
     </tr>

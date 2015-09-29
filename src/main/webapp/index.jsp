@@ -18,70 +18,43 @@
 <body>
 <script type="text/javascript">
     var mainFormAction = 'rs/person/new';
-    $(function () {
-        console.log("loaded!");
-        //test
-        $(".formTextInput:not(.dateInput)").val("test");
-        $(".dateInput").val("12.12.1971");
-        //test
-        $(".dateInput").datepicker({
-            dateFormat: "dd.mm.yy"
-        });
-        getExistedPersonList();
-
-        $("#personForm").submit(function (e) {
-            e.preventDefault();
-            var formData = $("#personForm").serialize();
-
-            $.ajax({
-                type: "POST",
-                url: mainFormAction,
-                data: formData,
-                dataType: 'json',
-                success: function (data) {
-                    displayPersonTable(data);
-                },
-                error: function (data) {
-                    alert("An error has occurred!")
+    function deletePerson() {
+        var selectedTr = $(this).parents("tr");
+        var id = selectedTr.attr("id");
+        $.ajax({
+            type: "POST",
+            url: 'rs/person/delete/' + id,
+            dataType: 'json',
+            success: function (data) {
+                selectedTr.fadeOut();
+                selectedTr.remove();
+                if(selectedTr.siblings("tr.appendedRow:visible").size() == 0) {
+                    selectedTr.siblings(".header").fadeOut();
                 }
-            });
-            return 0;
+            },
+            error: function (data) {
+                alert("An error has occurred!")
+            }
         });
+    }
 
-        $("#personListedTable").on("click", ".del", function(){
-            var selectedTr = $(this).parents("tr");
-            var id = selectedTr.attr("id");
-            $.ajax({
-                type: "POST",
-                url: 'rs/person/delete/' + id,
-                dataType: 'json',
-                success: function (data) {
-                    selectedTr.fadeOut();
-                    selectedTr.remove();
-                },
-                error: function (data) {
-                    alert("An error has occurred!")
-                }
-            });
-        });
+    function editPerson() {
+        var selectedTr = $(this).parents("tr");
+        var id = selectedTr.attr("id");
+        var firstName = selectedTr.find(".firstName").text();
+        var middleName = selectedTr.find(".middleName").text();
+        var lastName = selectedTr.find(".lastName").text();
+        var birthDate = selectedTr.find(".birthDate").text();
 
-        $("#personListedTable").on("click", ".edit", function(){
-            var selectedTr = $(this).parents("tr");
-            var id = selectedTr.attr("id");
-            var firstName = selectedTr.find(".firstName").text();
-            var middleName = selectedTr.find(".middleName").text();
-            var lastName = selectedTr.find(".lastName").text();
-            var birthDate = selectedTr.find(".birthDate").text();
-
-            $("#id").val(id);
-            $("#firstName").val(firstName);
-            $("#middleName").val(middleName);
-            $("#lastName").val(lastName);
-            $("#birthDate").val(birthDate);
-            $("#submitButton").val("Edit");
-            mainFormAction = 'rs/person/edit'
-        });
-    });
+        $("#id").val(id);
+        $("#firstName").val(firstName);
+        $("#middleName").val(middleName);
+        $("#lastName").val(lastName);
+        $("#birthDate").val(birthDate);
+        $("#submitButton").val("Edit");
+        mainFormAction = 'rs/person/edit'
+        $("#personForm input[type=text]").effect("highlight", {color: 'cyan'}, 1500);
+    }
 
     function getExistedPersonList() {
         $.ajax({
@@ -133,9 +106,10 @@
                 editedTr.children(".middleName").text(data.middleName);
                 editedTr.children(".lastName").text(data.lastName);
                 editedTr.children(".birthDate").text(day + "." + month + "." + year);
-                editedTr.effect("highlight", {color: 'red'}, 1500);
+                $("#personForm input:not([type=submit])").val("");
                 mainFormAction = 'rs/person/new';
                 $("#submitButton").val("Save");
+                editedTr.effect("highlight", {color: 'red'}, 1500);
             }
         }
     }
@@ -145,8 +119,50 @@
                 '<td class="appendedRow lastName"></td><td class="appendedRow birthDate"></td><td class="edit"><span class="edit" style="cursor: pointer">[e]</span></td>' +
                 '<td><span class="del" style="cursor: pointer">X</span></td></tr>';
 
+        if(!$(".header").is(":visible")) {
+            $(".header").fadeIn();
+        }
         $("#personListedTable tr:last").after(rowHtml);
     }
+
+    $(function () {
+        console.log("loaded!");
+        //test
+        $(".formTextInput:not(.dateInput)").val("test");
+        $(".dateInput").val("12.12.1971");
+        //test
+        $(".dateInput").datepicker({
+            dateFormat: "dd.mm.yy"
+        });
+        getExistedPersonList();
+
+        $("#personForm").submit(function (e) {
+            e.preventDefault();
+            var formData = $("#personForm").serialize();
+
+            $.ajax({
+                type: "POST",
+                url: mainFormAction,
+                data: formData,
+                dataType: 'json',
+                success: function (data) {
+                    displayPersonTable(data);
+                },
+                error: function (data) {
+                    alert("An error has occurred!")
+                }
+            });
+            return 0;
+        });
+
+        $("#personListedTable").on("click", ".del", function () {
+            deletePerson.call(this);
+        });
+
+        $("#personListedTable").on("click", ".edit", function () {
+            editPerson.call(this);
+        });
+    });
 </script>
 
 <form method="POST" id="personForm">
